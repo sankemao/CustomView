@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.pronetway.customview.custom.AliLoadingView
+        app:loadingColor="@color/colorAccent"
+        app:loadingWidth="4dp"
+        android:id="@+id/ali_loading_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+    
+    <!--<ProgressBar-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="80dp"/>-->
+
+    <Button
+        android:id="@+id/btn_start"
+        android:text="开始动画"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

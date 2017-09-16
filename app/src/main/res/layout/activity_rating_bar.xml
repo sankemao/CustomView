@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.pronetway.customview.custom.RatingBar
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:gradeNumber="5"
+        app:starFocus="@drawable/star_selected"
+        app:starPadding="10dp"
+        app:startNormal="@drawable/star_normal"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"/>
+
+    <RadioGroup
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.pronetway.customview.custom.MyRadioButton
+            app:bTextSize="14sp"
+            app:bText="aedfa"
+            android:clickable="true"
+
+            app:bTextColor="@color/colorPrimary"
+            app:buttonSize="10dp"
+            app:buttonColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.pronetway.customview.custom.MyRadioButton
+            app:bTextSize="14sp"
+            app:bText="aedfa"
+            android:clickable="true"
+            app:bTextColor="@color/colorPrimary"
+            app:buttonSize="10dp"
+            app:buttonColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.pronetway.customview.custom.MyRadioButton
+            app:bTextSize="14sp"
+            app:bText="aedfa"
+            android:clickable="true"
+            app:bTextColor="@color/colorPrimary"
+            app:buttonSize="10dp"
+            app:buttonColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
+
+</LinearLayout>

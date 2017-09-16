@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ColorTrackTextView">
+        <attr name="originColor" format="color"/>
+        <attr name="changeColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressBar">
+        <attr name="innerBackground" format="color"/>
+        <attr name="outerBackground" format="color"/>
+        <attr name="roundWidth" format="dimension"/>
+        <attr name="progressTextSize" format="dimension"/>
+        <attr name="progressTextColor" format="color"/>
+    </declare-styleable>
+    
+    <declare-styleable name="AliLoadingView">
+        <attr name="loadingColor" format="color"/>
+        <attr name="loadingWidth" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="RatingBar">
+        <attr name="startNormal" format="reference"/>
+        <attr name="starFocus" format="reference"/>
+        <attr name="gradeNumber" format="integer"/>
+        <attr name="starPadding" format="dimension"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="MyRadioButton">
+        <attr name="buttonColor" format="color"/>
+        <attr name="buttonSize" format="dimension"/>
+        <attr name="bTextColor" format="color"/>
+        <attr name="bTextSize" format="dimension"/>
+        <attr name="bText" format="string"/>
+    </declare-styleable>
+
+</resources>
