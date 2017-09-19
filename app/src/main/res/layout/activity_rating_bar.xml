@@ -59,5 +59,20 @@
 
     </RadioGroup>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"/>
+
+    <com.pronetway.customview.custom.LikeView
+        android:background="@color/colorAccent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
+
+
+
 
 </LinearLayout>
