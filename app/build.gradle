@@ -26,4 +26,6 @@ dependencies {
     //webview
     compile 'com.just.agentweb:agentweb:2.0.0'
     compile project(':baselib')
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    compile 'com.google.code.gson:gson:2.8.1'
 }

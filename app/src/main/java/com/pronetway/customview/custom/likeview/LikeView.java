@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -13,6 +14,9 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+
+import com.blankj.utilcode.util.LogUtils;
+import com.pronetway.customview.R;
 
 /**
  * Created by zouxiang on 2016/11/23.
@@ -111,25 +115,25 @@ public class LikeView extends View {
             notAllowedCancel = false;
             gravity = GRAVITY_CENTER;
         } else {
-//            TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.LikeView);
-//            try {
-//                number = ta.getInt(R.styleable.LikeView_number, 0);
-//                graphColor = ta.getColor(R.styleable.LikeView_graphColor, Color.parseColor("#888888"));
-//                textColor = ta.getColor(R.styleable.LikeView_textColor, Color.parseColor("#888888"));
-//                animateColor = ta.getColor(R.styleable.LikeView_animateColor, Color.parseColor("#ca5f5f"));
-//                textSize = ta.getDimensionPixelSize(R.styleable.LikeView_textSize, sp2px(14));
-//                isActivated = ta.getBoolean(R.styleable.LikeView_isActivated, false);
-//                autoMeasureMaxTextWidth = ta.getBoolean(R.styleable.LikeView_autoMeasureMaxWidth, true);
-//                notAllowedCancel = ta.getBoolean(R.styleable.LikeView_notAllowedCancel, false);
-//                animateDuration = ta.getInt(R.styleable.LikeView_animateDuration, 300);
-//                distance = ta.getDimensionPixelSize(R.styleable.LikeView_distance, dp2px(3));
-//                graphStrokeWidth = ta.getDimensionPixelSize(R.styleable.LikeView_graphStrokeWidth, dp2px(3));
-//                textStrokeWidth = ta.getDimensionPixelSize(R.styleable.LikeView_textStrokeWidth, dp2px(2));
-//                graphTextHeightRatio = ta.getFloat(R.styleable.LikeView_graphTextHeightRatio, 1.3f);
-//                gravity = ta.getInteger(R.styleable.LikeView_gravity,GRAVITY_CENTER);
-//            } finally {
-//                ta.recycle();
-//            }
+            TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.LikeView);
+            try {
+                number = ta.getInt(R.styleable.LikeView_number, 0);
+                graphColor = ta.getColor(R.styleable.LikeView_graphColor, Color.parseColor("#888888"));
+                textColor = ta.getColor(R.styleable.LikeView_textColor, Color.parseColor("#888888"));
+                animateColor = ta.getColor(R.styleable.LikeView_animateColor, Color.parseColor("#ca5f5f"));
+                textSize = ta.getDimensionPixelSize(R.styleable.LikeView_textSize, sp2px(14));
+                isActivated = ta.getBoolean(R.styleable.LikeView_isActivated, false);
+                autoMeasureMaxTextWidth = ta.getBoolean(R.styleable.LikeView_autoMeasureMaxWidth, true);
+                notAllowedCancel = ta.getBoolean(R.styleable.LikeView_notAllowedCancel, false);
+                animateDuration = ta.getInt(R.styleable.LikeView_animateDuration, 300);
+                distance = ta.getDimensionPixelSize(R.styleable.LikeView_distance, dp2px(3));
+                graphStrokeWidth = ta.getDimensionPixelSize(R.styleable.LikeView_graphStrokeWidth, dp2px(3));
+                textStrokeWidth = ta.getDimensionPixelSize(R.styleable.LikeView_textStrokeWidth, dp2px(2));
+                graphTextHeightRatio = ta.getFloat(R.styleable.LikeView_graphTextHeightRatio, 1.3f);
+                gravity = ta.getInteger(R.styleable.LikeView_gravity,GRAVITY_CENTER);
+            } finally {
+                ta.recycle();
+            }
         }
         textPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         textPaint.setColor(textColor);
@@ -354,6 +358,7 @@ public class LikeView extends View {
         numAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
+                LogUtils.d("动画结束" + numAnimateScale);
                 isNumAnimateRunning = false;
             }
         });

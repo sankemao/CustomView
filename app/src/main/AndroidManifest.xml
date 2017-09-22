@@ -39,6 +39,8 @@
         </activity>
         <activity android:name=".ui.LetterSideBar.LetterSideBarActivity">
         </activity>
+        <activity android:name=".ui.brvah.BrvahActivity">
+        </activity>
     </application>
 
 </manifest>

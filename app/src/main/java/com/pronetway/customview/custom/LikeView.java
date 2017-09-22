@@ -3,7 +3,6 @@ package com.pronetway.customview.custom;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -71,16 +70,9 @@ public class LikeView extends View {
         }
 
         direction = rollUp ? 1 : -1;
-        mNumAnimator = ObjectAnimator.ofFloat(this, "numAnimateScale", 0f, 1.0f);
-        mNumAnimator.setDuration(300L);
+        mNumAnimator = ObjectAnimator.ofFloat(this, "numAnimateScale", 0f, 1f);
+        mNumAnimator.setDuration(300);
         mIsNumAnimateRunning = true;
-        mNumAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                numAnimateScale = (float) animation.getAnimatedValue();
-                invalidate();
-            }
-        });
         mNumAnimator.addListener(new AnimatorListenerAdapter(){
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -110,10 +102,9 @@ public class LikeView extends View {
         mTextPaint.setTextSize(sp2px(14));
         mTextPaint.setAntiAlias(true);
         mTextPaint.setColor(mTextColor);
-
         measureTextWidth();
-
         measureTextHeightAndBaseLineHeight();
+        measureDefWidthAndDefHeight();
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -160,7 +151,7 @@ public class LikeView extends View {
         } else {
             numAnimateScale *= -direction; // -0.6
             LogUtils.d("---------" + numAnimateScale);
-//            canvas.clipRect(0, 0, 0 + mTextWidth, 0 + mTextHeight);//裁剪.限制显示区域
+            canvas.clipRect(0, 0, 0 + mTextWidth, 0 + mTextHeight);//裁剪.限制显示区域
             //绘制前半截文字.
             canvas.drawText(mPreNumStr, 0, mBaseLine, mTextPaint);
             //绘制旧文字
@@ -252,7 +243,7 @@ public class LikeView extends View {
         dy = (h - defHeight) / 2;
 
         textStartX = getPaddingLeft() + dx;
-        textStartY = getPaddingTop() + dy + mTextHeight / 2;
+        textStartY = getPaddingTop() + dy;
     }
 
     /**
@@ -283,5 +274,12 @@ public class LikeView extends View {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
     }
 
+    /**
+     * 动画
+     */
+    public void setNumAnimateScale(float numAnimateScale) {
+        this.numAnimateScale = numAnimateScale;
+        postInvalidate();
+    }
 
 }
