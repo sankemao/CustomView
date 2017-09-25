@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.pronetway.baselib.datahandler.IOHandler;
 import com.pronetway.customview.R;
 import com.pronetway.customview.custom.SubmitButton;
 
@@ -19,6 +20,7 @@ public class AliLoadingActivity extends AppCompatActivity {
     Button mBtnStart;
     @Bind(R.id.like_view)
     SubmitButton mLikeView;
+    private IOHandler mDiskHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,6 @@ public class AliLoadingActivity extends AppCompatActivity {
                 mLikeView.reset();
             }
         });
-
     }
 
     @OnClick(R.id.btn_start)
