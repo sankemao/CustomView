@@ -1,4 +1,4 @@
-package com.pronetway.customview.ui.LetterSideBar;
+package com.pronetway.customview.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

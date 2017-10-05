@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,23 +24,25 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.webviews.WebViewFirst">
+        <activity android:name=".ui.WebViewFirst">
         </activity>
         <activity android:name=".ui.CustomViewsActivity">
         </activity>
         <activity android:name=".ui.colortextview.ColorTrackTextViewActivity">
         </activity>
-        <activity android:name=".ui.circleprogressbar.CircleProgressBarActivity">
+        <activity android:name=".ui.CircleProgressBarActivity">
         </activity>
-        <activity android:name=".ui.shapeview.ShapeViewActivity">
+        <activity android:name=".ui.ShapeViewActivity">
         </activity>
-        <activity android:name=".ui.aliloadingtest.AliLoadingActivity">
+        <activity android:name=".ui.AliLoadingActivity">
         </activity>
-        <activity android:name=".ui.ratingbar.RatingBarActivity">
+        <activity android:name=".ui.RatingBarActivity">
         </activity>
-        <activity android:name=".ui.LetterSideBar.LetterSideBarActivity">
+        <activity android:name=".ui.LetterSideBarActivity">
         </activity>
         <activity android:name=".ui.brvah.BrvahActivity">
+        </activity>
+        <activity android:name=".ui.TagLayoutActivity">
         </activity>
     </application>
 

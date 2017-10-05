@@ -5,13 +5,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.pronetway.customview.ui.CustomViewsActivity;
-import com.pronetway.customview.ui.webviews.WebViewFirst;
+import com.pronetway.customview.ui.WebViewFirst;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+    private List<String> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +33,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-
+        items = new ArrayList<>();
+        items.add("a");
+        items.add("a");
+        items.add("a");
+        items.add("a");
+        ToastUtils.showShort(items.size() + "");
     }
 
-    @OnClick({R.id.btn_webview, R.id.btn_custom_views})
+    @OnClick({R.id.btn_webview, R.id.btn_custom_views, R.id.btn_test_list})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_webview:
@@ -39,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_custom_views:
                 startActivity(new Intent(this, CustomViewsActivity.class));
+                break;
+            case R.id.btn_test_list:
+                items = new ArrayList<>();
+                ToastUtils.showShort(items.size() + "");
                 break;
         }
     }

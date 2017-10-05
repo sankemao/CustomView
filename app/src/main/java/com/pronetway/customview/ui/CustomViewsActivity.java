@@ -6,13 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.pronetway.customview.R;
-import com.pronetway.customview.ui.LetterSideBar.LetterSideBarActivity;
-import com.pronetway.customview.ui.aliloadingtest.AliLoadingActivity;
 import com.pronetway.customview.ui.brvah.BrvahActivity;
-import com.pronetway.customview.ui.circleprogressbar.CircleProgressBarActivity;
 import com.pronetway.customview.ui.colortextview.ColorTrackTextViewActivity;
-import com.pronetway.customview.ui.ratingbar.RatingBarActivity;
-import com.pronetway.customview.ui.shapeview.ShapeViewActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -27,7 +22,8 @@ public class CustomViewsActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.btn_color_track_view, R.id.btn_circle_progress_view, R.id.btn_shape_view,
-            R.id.btn_ali_loading_view, R.id.btn_rating_bar_view, R.id.btn_letter_side_bar, R.id.btn_brvah})
+            R.id.btn_ali_loading_view, R.id.btn_rating_bar_view, R.id.btn_letter_side_bar, R.id.btn_brvah,
+            R.id.btn_tag_layout})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_color_track_view:
@@ -50,6 +46,9 @@ public class CustomViewsActivity extends AppCompatActivity {
                 break;
             case R.id.btn_brvah:
                 startActivity(new Intent(this, BrvahActivity.class));
+                break;
+            case R.id.btn_tag_layout:
+                startActivity(new Intent(this, TagLayoutActivity.class));
                 break;
         }
     }

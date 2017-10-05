@@ -1,4 +1,4 @@
-package com.pronetway.customview.ui.circleprogressbar;
+package com.pronetway.customview.ui;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;

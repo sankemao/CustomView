@@ -1,4 +1,4 @@
-package com.pronetway.customview.ui.webviews;
+package com.pronetway.customview.ui;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
