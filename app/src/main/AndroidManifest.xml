@@ -44,6 +44,11 @@
         </activity>
         <activity android:name=".ui.TagLayoutActivity">
         </activity>
+        <activity android:name=".ui.SlidingMenu">
+        </activity>
+        <activity android:name=".ui.SplashActivity"
+            android:theme="@style/NotitleTheme">
+        </activity>
     </application>
 
 </manifest>

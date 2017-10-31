@@ -21,11 +21,12 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
     //webview
-    compile 'com.just.agentweb:agentweb:2.0.0'
     compile project(':baselib')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.just.agentweb:agentweb:2.0.0'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }

@@ -23,7 +23,7 @@ public class CustomViewsActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_color_track_view, R.id.btn_circle_progress_view, R.id.btn_shape_view,
             R.id.btn_ali_loading_view, R.id.btn_rating_bar_view, R.id.btn_letter_side_bar, R.id.btn_brvah,
-            R.id.btn_tag_layout})
+            R.id.btn_tag_layout, R.id.btn_kg_sliding, R.id.btn_splash})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_color_track_view:
@@ -49,6 +49,14 @@ public class CustomViewsActivity extends AppCompatActivity {
                 break;
             case R.id.btn_tag_layout:
                 startActivity(new Intent(this, TagLayoutActivity.class));
+                break;
+            case R.id.btn_kg_sliding:
+                startActivity(new Intent(this, SlidingMenu.class));
+                break;
+            case R.id.btn_splash:
+                startActivity(new Intent(this, SplashActivity.class));
+                break;
+            default:
                 break;
         }
     }

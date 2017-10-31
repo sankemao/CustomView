@@ -143,6 +143,8 @@ public class AliLoadingView extends View {
             case FAILURE:
                 drawFailure(canvas);
                 break;
+            default:
+                break;
         }
     }
 
@@ -162,6 +164,7 @@ public class AliLoadingView extends View {
         if (mPathCircle.isEmpty()) {
             mPathCircleDst.reset();
             mPathCircleDst.lineTo(0,0);
+
             mPathCircle.addCircle(getWidth() / 2, getHeight() / 2, getWidth() / 2 - mLoadingWidth / 2, Path.Direction.CW);
             mPathCircle.moveTo(getWidth() / 8 * 3, getWidth() / 2);
             mPathCircle.lineTo(getWidth() / 2, getWidth() / 5 * 3);
@@ -170,11 +173,13 @@ public class AliLoadingView extends View {
             mPathMeasure.setPath(mPathCircle, false);
         }
 
+        //画圆
         if (mCircleValue < 1) {
             //将追踪的path添加给mPathCircleDst,(注意这里是添加, 而不是替换)
             mPathMeasure.getSegment(0, mCircleValue * mPathMeasure.getLength(), mPathCircleDst, true);
             canvas.drawPath(mPathCircleDst, mPaint);
         } else {
+            //画勾
             if (mCircleValue == 1) {
                 mPathMeasure.nextContour();
                 mCircleValue += 1;
