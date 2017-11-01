@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.pronetway.customview.custom.SlidingMenu
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_sliding_menu"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pronetway.customview.ui.SlidingMenu">
+    app:menuRightMargin="62dp"
+    android:background="@drawable/home_menu_bg">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <include layout="@layout/layout_home_menu" />
+
+        <include layout="@layout/layout_home_content" />
+    </LinearLayout>
+
+</com.pronetway.customview.custom.SlidingMenu>

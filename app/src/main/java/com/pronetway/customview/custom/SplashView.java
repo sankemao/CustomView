@@ -11,8 +11,9 @@ import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
 
@@ -128,7 +129,7 @@ public class SplashView extends View {
                     mSplashState = new ExpandAlphaState();
                 }
             });
-            valueAnimator.setInterpolator(new AccelerateInterpolator());
+            valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
             //延迟0.3s执行动画
             SplashView.this.postDelayed(new Runnable() {
                 @Override
@@ -166,7 +167,9 @@ public class SplashView extends View {
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
+                    //小球半径扩大
                     mExpandCircleR = (float) animation.getAnimatedValue();
+                    //小球透明度及logo显示.
                     if ((mExpandCircleR) >= alphaPoint) {
                         mPaintAlpha = (int) ((mDiagonalDist - mExpandCircleR) / (mDiagonalDist - alphaPoint) * 255);
                         if (!hasShowLogo && mCallBack != null) {
@@ -198,7 +201,9 @@ public class SplashView extends View {
 
         @Override
         public void draw(Canvas canvas) {
-            mCirclePaint.setAlpha(mPaintAlpha);
+            if (mPaintAlpha != 255) {
+                mCirclePaint.setAlpha(mPaintAlpha);
+            }
             canvas.drawCircle(mCenterX, mCenterY, mExpandCircleR, mCirclePaint);
         }
     }
@@ -219,6 +224,10 @@ public class SplashView extends View {
 
     public void setLogoShowCallBack(CallBack showCallBack) {
         this.mCallBack = showCallBack;
+    }
+
+    private float dp2px(int dip) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, getResources().getDisplayMetrics());
     }
 
 }

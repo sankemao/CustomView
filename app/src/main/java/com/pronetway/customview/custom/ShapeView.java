@@ -47,6 +47,8 @@ public class ShapeView extends View {
             case Triangle:
                 mCurrentShape = Shape.Circle;
                 break;
+            default:
+                break;
         }
         postInvalidate();
     }
@@ -84,6 +86,8 @@ public class ShapeView extends View {
                     mPath.close();
                 }
                 canvas.drawPath(mPath, mPaint);
+                break;
+            default:
                 break;
         }
     }
