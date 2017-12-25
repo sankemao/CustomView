@@ -20,8 +20,6 @@ import com.pronetway.customview.R;
  * Create Time: 2017/11/1.14:23
  * Author:jin
  * Email:210980059@qq.com
- *
- * @author Administrator
  */
 public class SlidingMenu extends HorizontalScrollView {
     private boolean mMenuIsOpen = false;
@@ -52,6 +50,11 @@ public class SlidingMenu extends HorizontalScrollView {
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            //竖直方向比水平方向速度快, 不处理.
+            if (Math.abs(velocityY) > Math.abs(velocityX)) {
+                return super.onFling(e1, e2, velocityX, velocityY);
+            }
+
             if (mMenuIsOpen) {
                 if (velocityX < 0) {
                     toggleMenu();

@@ -25,14 +25,14 @@ import android.widget.PopupWindow;
  */
 public class QuickPopupWindow extends PopupWindow implements PopupWindow.OnDismissListener {
 
-    private PopupBuilder mPopupBuilder;
+    private PopupBuilder mBuilder;
     private Context mContext;
     private Window mWindow;
 
     protected QuickPopupWindow(PopupBuilder popupBuilder) {
         super(popupBuilder.mContext);
         this.mContext = popupBuilder.mContext;
-        this.mPopupBuilder = popupBuilder;
+        this.mBuilder = popupBuilder;
         apply();
         dealBackground();
     }
@@ -42,7 +42,7 @@ public class QuickPopupWindow extends PopupWindow implements PopupWindow.OnDismi
         Activity activity = (Activity) mContext;
         if(activity != null){
             //如果设置的值在0 - 1的范围内，则用设置的值，否则用默认值
-            final  float alpha = mPopupBuilder.mBackgroundDrakValue;
+            final  float alpha = mBuilder.mBackgroundDrakValue;
             mWindow = activity.getWindow();
             WindowManager.LayoutParams params = mWindow.getAttributes();
             params.alpha = alpha;
@@ -55,8 +55,8 @@ public class QuickPopupWindow extends PopupWindow implements PopupWindow.OnDismi
 
     @Override
     public void onDismiss() {
-        if(mPopupBuilder.mOnDismissListener!=null){
-            mPopupBuilder.mOnDismissListener.onDismiss();
+        if(mBuilder.mOnDismissListener!=null){
+            mBuilder.mOnDismissListener.onDismiss();
         }
 
         //如果设置了背景变暗，那么在dissmiss的时候需要还原
@@ -72,47 +72,47 @@ public class QuickPopupWindow extends PopupWindow implements PopupWindow.OnDismi
 
     private void apply() {
         View rootView;
-        if (mPopupBuilder.mContentLayoutId > 0) {
-            rootView = LayoutInflater.from(mContext).inflate(mPopupBuilder.mContentLayoutId, null);
+        if (mBuilder.mContentLayoutId > 0) {
+            rootView = LayoutInflater.from(mContext).inflate(mBuilder.mContentLayoutId, null);
         } else {
-            rootView = mPopupBuilder.mContentView;
+            rootView = mBuilder.mContentView;
         }
         this.setContentView(rootView);
 
         //设置宽高.
-        if (mPopupBuilder.mWidth != 0 && mPopupBuilder.mHeight != 0) {
-            this.setWidth(mPopupBuilder.mWidth);
-            this.setHeight(mPopupBuilder.mHeight);
+        if (mBuilder.mWidth != 0 && mBuilder.mHeight != 0) {
+            this.setWidth(mBuilder.mWidth);
+            this.setHeight(mBuilder.mHeight);
         } else {
             this.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
             this.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         }
 
 
-        this.setClippingEnabled(mPopupBuilder.mClippEnable);
-        if(mPopupBuilder.mIgnoreCheekPress){
+        this.setClippingEnabled(mBuilder.mClippEnable);
+        if(mBuilder.mIgnoreCheekPress){
             this.setIgnoreCheekPress();
         }
-        if(mPopupBuilder.mInputMode!=-1){
-            this.setInputMethodMode(mPopupBuilder.mInputMode);
+        if(mBuilder.mInputMode!=-1){
+            this.setInputMethodMode(mBuilder.mInputMode);
         }
-        if(mPopupBuilder.mSoftInputMode!=-1){
-            this.setSoftInputMode(mPopupBuilder.mSoftInputMode);
+        if(mBuilder.mSoftInputMode!=-1){
+            this.setSoftInputMode(mBuilder.mSoftInputMode);
         }
-        if(mPopupBuilder.mOnDismissListener!=null){
-            this.setOnDismissListener(mPopupBuilder.mOnDismissListener);
+        if(mBuilder.mOnDismissListener!=null){
+            this.setOnDismissListener(mBuilder.mOnDismissListener);
         }
-        if(mPopupBuilder.mOnTouchListener!=null){
-            this.setTouchInterceptor(mPopupBuilder.mOnTouchListener);
+        if(mBuilder.mOnTouchListener!=null){
+            this.setTouchInterceptor(mBuilder.mOnTouchListener);
         }
-        this.setTouchable(mPopupBuilder.mTouchable);
+        this.setTouchable(mBuilder.mTouchable);
 
 
         this.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         //2017.6.27 add:fix 设置  setOutsideTouchable（false）点击外部取消的bug.
         // 判断是否点击PopupWindow之外的地方关闭 popWindow
-        if(!mPopupBuilder.mCancelable){
+        if(!mBuilder.mCancelable){
             //注意这三个属性必须同时设置，不然不能disMiss，以下三行代码在Android 4.4 上是可以，然后在Android 6.0以上，下面的三行代码就不起作用了，就得用下面的方法
             this.setFocusable(true);
             this.setOutsideTouchable(false);
@@ -139,7 +139,7 @@ public class QuickPopupWindow extends PopupWindow implements PopupWindow.OnDismi
                     final int y = (int) event.getY();
 
                     if ((event.getAction() == MotionEvent.ACTION_DOWN)
-                            && ((x < 0) || (x >= mPopupBuilder.mWidth) || (y < 0) || (y >= mPopupBuilder.mHeight))) {
+                            && ((x < 0) || (x >= mBuilder.mWidth) || (y < 0) || (y >= mBuilder.mHeight))) {
 //                        Log.e(TAG,"out side ");
 //                        Log.e(TAG,"width:"+this.getWidth()+"height:"+this.getHeight()+" x:"+x+" y  :"+y);
                         return true;
@@ -151,8 +151,8 @@ public class QuickPopupWindow extends PopupWindow implements PopupWindow.OnDismi
                 }
             });
         }else{
-            this.setFocusable(mPopupBuilder.mFocusable);
-            this.setOutsideTouchable(mPopupBuilder.mCancelable);
+            this.setFocusable(mBuilder.mFocusable);
+            this.setOutsideTouchable(mBuilder.mCancelable);
         }
     }
 

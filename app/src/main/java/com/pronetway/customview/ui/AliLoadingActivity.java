@@ -36,6 +36,7 @@ public class AliLoadingActivity extends AppCompatActivity {
                 mLikeView.reset();
             }
         });
+
     }
 
     @OnClick(R.id.btn_start)

@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 items = new ArrayList<>();
                 ToastUtils.showShort(items.size() + "");
                 break;
+
         }
     }
 }
