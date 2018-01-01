@@ -6,10 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.pronetway.customview.custom.ShapeView
-        android:id="@+id/shape_view"
-        android:layout_marginTop="20dp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"/>
+    <com.pronetway.customview.custom.elemeloadingview.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.pronetway.customview.custom.elemeloadingview.LoadingView>
 
 </LinearLayout>

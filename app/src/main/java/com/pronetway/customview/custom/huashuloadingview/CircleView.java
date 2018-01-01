@@ -1,4 +1,4 @@
-package com.pronetway.customview.custom.loading;
+package com.pronetway.customview.custom.huashuloadingview;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -35,7 +35,7 @@ public class CircleView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+        //画背景圆形
         int x = getWidth() / 2;
         int y = getHeight() / 2;
         canvas.drawCircle(x, y, x, mPaint);

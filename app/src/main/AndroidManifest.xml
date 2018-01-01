@@ -32,7 +32,7 @@
         </activity>
         <activity android:name=".ui.CircleProgressBarActivity">
         </activity>
-        <activity android:name=".ui.ShapeViewActivity">
+        <activity android:name=".ui.ElemeLoadingViewActivity">
         </activity>
         <activity android:name=".ui.AliLoadingActivity">
         </activity>

@@ -1,4 +1,4 @@
-package com.pronetway.customview.custom;
+package com.pronetway.customview.custom.elemeloadingview;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -94,5 +94,12 @@ public class ShapeView extends View {
 
     public enum Shape {
         Circle, Square, Triangle
+    }
+
+    /**
+     * 获取当前的形状
+     */
+    public Shape getCurrentShape() {
+        return mCurrentShape;
     }
 }

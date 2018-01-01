@@ -33,7 +33,7 @@ public class CustomViewsActivity extends AppCompatActivity {
                 startActivity(new Intent(this, CircleProgressBarActivity.class));
                 break;
             case R.id.btn_shape_view:
-                startActivity(new Intent(this, ShapeViewActivity.class));
+                startActivity(new Intent(this, ElemeLoadingViewActivity.class));
                 break;
             case R.id.btn_ali_loading_view:
                 startActivity(new Intent(this, AliLoadingActivity.class));
