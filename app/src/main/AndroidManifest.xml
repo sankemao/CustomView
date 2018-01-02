@@ -52,6 +52,8 @@
         </activity>
         <activity android:name=".ui.DataScreenActivity">
         </activity>
+        <activity android:name=".mytest.OkActivity">
+        </activity>
     </application>
 
 </manifest>
