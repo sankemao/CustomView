@@ -6,6 +6,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.pronetway.customview.custom.WaveViewBySin
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:wave_amplitude="8dp"
+            app:wave_auto_start="true"
+            app:wave_start_period="0"
+            />
+
+        <com.pronetway.customview.custom.WaveViewBySin
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:wave_amplitude="8dp"
+            app:wave_auto_start="true"
+            app:wave_start_period="0.6"
+            />
+
+        <com.pronetway.customview.custom.RCRelativeLayout
+
+            android:layout_centerInParent="true"
+            app:round_as_circle="true"
+            app:stroke_width="2dp"
+            app:stroke_color="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_test"
+                android:src="@drawable/test"
+                android:scaleType="centerCrop"
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:background="#3c3c3c3c"
+                android:textColor="@android:color/white"
+                android:text="哈哈哈"
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
+
+        </com.pronetway.customview.custom.RCRelativeLayout>
+    </RelativeLayout>
+
     <!--<com.pronetway.customview.custom.AliLoadingView-->
         <!--app:loadingColor="@color/colorAccent"-->
         <!--app:loadingWidth="4dp"-->
@@ -31,5 +78,11 @@
         app:buttonText="登录"
         android:layout_width="200dp"
         android:layout_height="60dp"/>
+    
+    <com.pronetway.customview.custom.huashuloadingview.AnotherLoadingView
+        android:layout_width="60dp"
+        android:layout_height="60dp">
+
+    </com.pronetway.customview.custom.huashuloadingview.AnotherLoadingView>
 
 </LinearLayout>

@@ -68,6 +68,15 @@ public class SlidingMenu extends HorizontalScrollView {
             }
             return false;
         }
+
+//        @Override
+//        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+//            if (Math.abs(distanceX) < 10 * Math.abs(distanceY)) {
+//                LogUtils.d("x: " + distanceX + ", y: " + distanceY);
+//                return true;
+//            }
+//            return super.onScroll(e1, e2, distanceX, distanceY);
+//        }
     }
 
     private void toggleMenu() {
@@ -78,6 +87,14 @@ public class SlidingMenu extends HorizontalScrollView {
         }
     }
 
+    /**
+     * 写在布局中的view或viewGroup解析后会触发此方法，直接new出来的不会。
+     * 在解析完成后，必然会调用addView方法，该操作就会触发requestLayout和invalidate。
+     * performTraversalse performMeasure view.measure onMeasure
+     * performLayout view.layout onLayout
+     * performDraw draw drawSoftWare view.draw onDraw dispatchDraw drawChild
+     *
+     */
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
@@ -87,6 +104,15 @@ public class SlidingMenu extends HorizontalScrollView {
         mContentView = containerView.getChildAt(1);
         mMenuView.getLayoutParams().width = mMenuWidth;
         mContentView.getLayoutParams().width = ScreenUtils.getScreenWidth();
+    }
+
+    /**
+     * 一般发生在视图大小发生变化时调用
+     * layout->setFrame->sizeChange->onSizeChanged->onLayout
+     */
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
     }
 
     @Override
@@ -126,6 +152,7 @@ public class SlidingMenu extends HorizontalScrollView {
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
 
+        //如果手势处理了，就return true, 代表消费了此事件，不再向下分发。
         if (mGestureDetector.onTouchEvent(ev)) {
             return true;
         }

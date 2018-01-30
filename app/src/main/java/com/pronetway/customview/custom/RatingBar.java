@@ -70,6 +70,7 @@ public class RatingBar extends View {
         int height = mStarFinalSize + 2 * getPaddingTop();
 
         Matrix matrix = new Matrix();
+        //通过矩阵变换缩放bitmap.
         matrix.postScale(mStarFinalSize / mStarNormalBitmap.getWidth(), mStarFinalSize / mStarNormalBitmap.getHeight());
         mDstStarFocusBitmap = Bitmap.createBitmap(mStarFocusBitmap, 0, 0, mStarFocusBitmap.getWidth(), mStarFocusBitmap.getHeight(), matrix, true);
         mDstStarNormalBitmap = Bitmap.createBitmap(mStarNormalBitmap, 0, 0, mStarFocusBitmap.getWidth(), mStarFocusBitmap.getHeight(), matrix, true);

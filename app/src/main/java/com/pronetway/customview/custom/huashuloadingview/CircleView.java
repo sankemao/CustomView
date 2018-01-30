@@ -19,16 +19,17 @@ public class CircleView extends View {
     private int mColor;
 
     public CircleView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public CircleView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public CircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mPaint = new Paint();
+        mPaint.setStyle(Paint.Style.FILL);
         mPaint.setDither(true);
         mPaint.setAntiAlias(true);
     }
@@ -47,7 +48,7 @@ public class CircleView extends View {
      */
     public void exChangeColor(int color) {
         this.mColor = color;
-        mPaint.setColor(color);
+        mPaint.setColor(mColor);
         postInvalidate();
     }
 

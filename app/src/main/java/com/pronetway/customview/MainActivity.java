@@ -8,6 +8,7 @@ import android.view.View;
 import com.blankj.utilcode.util.ToastUtils;
 import com.pronetway.customview.ui.CustomViewsActivity;
 import com.pronetway.customview.ui.WebViewFirst;
+import com.pronetway.customview.util.WifiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         ToastUtils.showShort(items.size() + "");
     }
 
-    @OnClick({R.id.btn_webview, R.id.btn_custom_views, R.id.btn_test_list})
+    @OnClick({R.id.btn_webview, R.id.btn_custom_views, R.id.btn_test_list, R.id.btn_change_ssid})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_webview:
@@ -54,7 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 items = new ArrayList<>();
                 ToastUtils.showShort(items.size() + "");
                 break;
-
+            case R.id.btn_change_ssid:
+                boolean result = WifiUtils.openHotSpot(this, "aaa", "1111");
+                ToastUtils.showShort("热点打开结果为: " + result);
+                break;
+            default:
+                break;
         }
     }
+
 }

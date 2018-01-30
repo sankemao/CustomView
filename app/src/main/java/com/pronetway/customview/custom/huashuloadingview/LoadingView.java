@@ -6,7 +6,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -121,7 +120,7 @@ public class LoadingView extends RelativeLayout {
         params.addRule(CENTER_IN_PARENT);
 
         circleView.setLayoutParams(params);
-
+        addView(circleView);
         return circleView;
     }
 

@@ -42,8 +42,6 @@ public class JViewHolder extends RecyclerView.ViewHolder {
         View view = getViewById(viewId);
         view.setSelected(selected);
         return this;
-
-
     }
 
     public JViewHolder setImgByUrl(int viewId, HolderImageLoader imageLoader) {
