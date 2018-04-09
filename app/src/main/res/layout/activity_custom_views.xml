@@ -1,72 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:id="@+id/btn_color_track_view"
-        android:text="ColorTrackTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btn_circle_progress_view"
-        android:text="CircleProgressView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btn_shape_view"
-        android:text="仿饿了么加载"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btn_ali_loading_view"
-        android:text="仿阿里加载"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_rating_bar_view"
-        android:text="五星评分"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_color_track_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ColorTrackTextView"/>
 
-    <Button
-        android:id="@+id/btn_letter_side_bar"
-        android:text="侧滑栏"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_circle_progress_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CircleProgressView"/>
 
-    <Button
-        android:id="@+id/btn_brvah"
-        android:text="BRVAH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_shape_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="仿饿了么加载"/>
 
-    <Button
-        android:id="@+id/btn_tag_layout"
-        android:text="流式布局"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_ali_loading_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="仿阿里加载"/>
 
-    <Button
-        android:id="@+id/btn_kg_sliding"
-        android:text="酷狗侧滑"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_rating_bar_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="五星评分"/>
 
-    <Button
-        android:id="@+id/btn_splash"
-        android:text="云点餐闪屏页"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_letter_side_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="侧滑栏"/>
 
-    <Button
-        android:id="@+id/btn_data_screen"
-        android:text="58顶部筛选"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_brvah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BRVAH"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_tag_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="流式布局"/>
+
+        <Button
+            android:id="@+id/btn_kg_sliding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="酷狗侧滑"/>
+
+        <Button
+            android:id="@+id/btn_splash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="云点餐闪屏页"/>
+
+        <Button
+            android:id="@+id/btn_data_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="58顶部筛选"/>
+
+        <Button
+            android:id="@+id/btn_wheel_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="滚动选择器"/>
+
+    </LinearLayout>
+</ScrollView>

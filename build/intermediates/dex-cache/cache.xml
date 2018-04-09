@@ -3,48 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Administrator\.android\build-cache\78182002ade892de2161d77c6c4251aa2a85d1fe\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
-        <dex dex="D:\Android\Workspace\CustomView\app\build\intermediates\pre-dexed\debug\classes_d5759902082c878ead7df189dd0bdf61d4bd7eff.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.android\build-cache\a720aa611000c62d77bf0ba8e2e2f192b95ee6a1\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="880cfc79d3ef9947a15cac3d12828d848183b665">
-        <dex dex="D:\Android\Workspace\CustomView\app\build\intermediates\pre-dexed\debug\classes_f13c8b78840b5b810fe672856c6f2484fde518b2.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\Android\Workspace\CustomView\baselib\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="d489bbaba5545805294afe3bc27796cb7e3b2a16">
         <dex dex="D:\Android\Workspace\CustomView\app\build\intermediates\pre-dexed\debug\classes_89b8c32184b0ec4744115d3e463460040bb1a1e2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.android\build-cache\8bbf0b3884177cef8135aaa60c069504dcd902d0\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="e51c2f662bb72419632af5192553c37e33890a99">
-        <dex dex="D:\Android\Workspace\CustomView\app\build\intermediates\pre-dexed\debug\classes_d9f0d9b5930dc94927913f525292293e43d397de.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.android\build-cache\e51905024ce37135277916fefd4ebd072080e15c\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="fa61569ed84bc6979e529ec7d92bb4756b1c3572">
-        <dex dex="D:\Android\Workspace\CustomView\app\build\intermediates\pre-dexed\debug\classes_3d9ba713fa576fc20a11485c85df9ad34dc4e214.jar" />
     </item>
 
 </items>

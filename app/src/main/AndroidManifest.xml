@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
 
     <application
         android:name=".app.App"
@@ -56,6 +56,8 @@
         <activity android:name=".ui.DataScreenActivity">
         </activity>
         <activity android:name=".mytest.OkActivity">
+        </activity>
+        <activity android:name=".ui.WheelViewActivity">
         </activity>
     </application>
 

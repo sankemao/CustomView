@@ -23,7 +23,7 @@ public class CustomViewsActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_color_track_view, R.id.btn_circle_progress_view, R.id.btn_shape_view,
             R.id.btn_ali_loading_view, R.id.btn_rating_bar_view, R.id.btn_letter_side_bar, R.id.btn_brvah,
-            R.id.btn_tag_layout, R.id.btn_kg_sliding, R.id.btn_splash, R.id.btn_data_screen})
+            R.id.btn_tag_layout, R.id.btn_kg_sliding, R.id.btn_splash, R.id.btn_data_screen, R.id.btn_wheel_view})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_color_track_view:
@@ -58,6 +58,9 @@ public class CustomViewsActivity extends AppCompatActivity {
                 break;
             case R.id.btn_data_screen:
                 startActivity(new Intent(this, DataScreenActivity.class));
+                break;
+            case R.id.btn_wheel_view:
+                startActivity(new Intent(this, WheelViewActivity.class));
                 break;
             default:
                 break;

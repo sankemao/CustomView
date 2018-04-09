@@ -85,9 +85,9 @@ public class RCRelativeLayout extends RelativeLayout {
 
         mRoundCorner = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_corner, mRoundCorner);
         mTopLeft = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_top_left, mRoundCorner);
-        mTopRight = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_top_left, mRoundCorner);
-        mBottomLeft = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_top_left, mRoundCorner);
-        mBottomRight = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_top_left, mRoundCorner);
+        mTopRight = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_top_right, mRoundCorner);
+        mBottomLeft = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_bottom_left, mRoundCorner);
+        mBottomRight = ta.getDimensionPixelSize(R.styleable.RCRelativeLayout_round_bottom_right, mRoundCorner);
 
         ta.recycle();
     }
