@@ -18,6 +18,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
     private List<String> items;
+    private Student mA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         items.add("a");
         items.add("a");
         ToastUtils.showShort(items.size() + "");
+
+        mA = new Student("小明", 9);
     }
 
     @OnClick({R.id.btn_webview, R.id.btn_custom_views, R.id.btn_test_list, R.id.btn_change_ssid})
@@ -52,8 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, CustomViewsActivity.class));
                 break;
             case R.id.btn_test_list:
-                items = new ArrayList<>();
-                ToastUtils.showShort(items.size() + "");
+//                items = new ArrayList<>();
+//                ToastUtils.showShort(items.size() + "");
+                final Student B = mA;
+                mA.age = 18;
+                ToastUtils.showShort(B.toString());
                 break;
             case R.id.btn_change_ssid:
                 boolean result = WifiUtils.openHotSpot(this, "aaa", "1111");
