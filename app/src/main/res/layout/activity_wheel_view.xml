@@ -19,6 +19,27 @@
         android:padding="10dp"
         />
 
+    <com.pronetway.customview.custom.MyTouchViewGroup
+        android:background="@color/colorPrimary"
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+
+        <com.pronetway.customview.custom.MyTouchView
+            android:id="@+id/view_test"
+            android:background="@color/colorAccent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+    </com.pronetway.customview.custom.MyTouchViewGroup>
+
+
+
+    <Button
+        android:id="@+id/btn_test"
+        android:text="移动10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="0dp"-->
@@ -40,11 +61,5 @@
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"/>-->
     <!--</LinearLayout>-->
-
-
-    <com.pronetway.customview.ui.test.MyTestView
-        android:background="@android:color/holo_red_light"
-        android:layout_width="200dp"
-        android:layout_height="200dp"/>
 
 </LinearLayout>

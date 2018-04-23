@@ -460,7 +460,7 @@ public class WheelView extends View {
                 if (mIsBeingDragged) {
                     ViewParent parent = getParent();
                     if (parent != null) {
-                        //当scroller自动滚动是再次按下，请求父控件不拦截事件
+                        //当scroller自动滚动时再次按下，请求父控件不拦截事件
                         parent.requestDisallowInterceptTouchEvent(true);
                     }
                 }
@@ -557,6 +557,7 @@ public class WheelView extends View {
                 correctionDistanceY();
                 break;
         }
+
         if (mVelocityTracker != null) {
             mVelocityTracker.addMovement(event);
         }

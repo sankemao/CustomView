@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 
 import com.blankj.utilcode.util.ConvertUtils;
-import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.pronetway.customview.R;
 
@@ -28,6 +27,8 @@ public class SlidingMenu extends HorizontalScrollView {
     private View mMenuView;
     private View mContentView;
     private GestureDetector mGestureDetector;
+    private float mInitDownX;
+    private float mInitDownY;
 
     public SlidingMenu(Context context) {
         this(context, null);
@@ -50,10 +51,6 @@ public class SlidingMenu extends HorizontalScrollView {
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            //竖直方向比水平方向速度快, 不处理.
-            if (Math.abs(velocityY) > Math.abs(velocityX)) {
-                return super.onFling(e1, e2, velocityX, velocityY);
-            }
 
             if (mMenuIsOpen) {
                 if (velocityX < 0) {
@@ -69,14 +66,27 @@ public class SlidingMenu extends HorizontalScrollView {
             return false;
         }
 
-//        @Override
-//        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-//            if (Math.abs(distanceX) < 10 * Math.abs(distanceY)) {
-//                LogUtils.d("x: " + distanceX + ", y: " + distanceY);
-//                return true;
-//            }
-//            return super.onScroll(e1, e2, distanceX, distanceY);
-//        }
+    }
+
+
+
+        @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        switch (ev.getActionMasked()) {
+            case MotionEvent.ACTION_DOWN:
+                mInitDownX = ev.getX();
+                mInitDownY = ev.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                final float x = ev.getX();
+                final float y = ev.getY();
+                if (Math.abs(x - mInitDownX) < 8 * Math.abs(y - mInitDownY)) {
+                    return false;
+                }
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+        return super.onInterceptTouchEvent(ev);
     }
 
     private void toggleMenu() {
@@ -129,7 +139,7 @@ public class SlidingMenu extends HorizontalScrollView {
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-        LogUtils.d("onScrollChanged" + l);
+//        LogUtils.d("onScrollChanged" + l);
         //目录关闭状态 -> 打开状态
         //1 - 0
         float scale = l * 1f / mMenuWidth;
