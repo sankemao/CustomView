@@ -20,6 +20,7 @@ import com.pronetway.customview.R;
  * Create Time: 2018/4/24.11:30
  * Author:jin
  * Email:210980059@qq.com
+ * https://blog.csdn.net/bfbx5173/article/details/45191147
  */
 public class SwitchButton extends View {
 
