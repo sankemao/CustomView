@@ -166,4 +166,16 @@
         <attr name="header_init_offset"/>
         <attr name="target_init_offset"/>
     </declare-styleable>
+
+
+    <declare-styleable name="SwitchButton">
+        <attr name="state">
+            <enum name="open" value="1"/>
+            <enum name="close" value="2"/>
+        </attr>
+        <attr name="openColor" format="color|reference"/>
+        <attr name="closeColor" format="color|reference"/>
+        <attr name="middleColor" format="color|reference"/>
+    </declare-styleable>
+
 </resources>

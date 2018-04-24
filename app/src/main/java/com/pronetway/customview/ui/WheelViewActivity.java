@@ -2,11 +2,9 @@ package com.pronetway.customview.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.pronetway.customview.R;
@@ -39,18 +37,6 @@ public class WheelViewActivity extends AppCompatActivity {
             @Override
             public void onPositionSelect(int position) {
                 LogUtils.e("当前选中条目： " + position);
-            }
-        });
-
-        final View testView = findViewById(R.id.view_test);
-
-        final Button button = (Button) findViewById(R.id.btn_test);
-        button.setOnClickListener(new View.OnClickListener() {
-            float distanceX = 0;
-            @Override
-            public void onClick(View v) {
-                ViewCompat.setTranslationX(testView, distanceX);
-                distanceX = distanceX + 20;
             }
         });
 
